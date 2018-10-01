@@ -12,15 +12,20 @@ class User:
 
 
   def create_account(self):
-      print("Register to create an account")
-      self.username = input("Enter a username: ")
-      self.password = input("Enter a password: ")
-      self.access_level = input("Enter access-level : ")
-
+    print("Register to create an account")
+    self.username = input("Enter a username: ")
+    self.password = input("Enter a password: ")
+    self.access_level = input("Enter a Access level: ")
+    varx = self.user_details
+    user = [user for user in varx if user['username'] == self.username]
+    if len(user) != 0:
+      print("Error, user already exists")
+    else:
       registered_user = {
         'username': self.username,
         'password': self.password,
         'access_level': self.access_level
+
       }
 
       self.user_details.append(registered_user)
@@ -42,6 +47,8 @@ class User:
       "Timestamp":"Coming soon"
       }
       Userdata().user_login_data().append(login_details)
+    else:
+      print("Wrong username/password combination")
 
   def user_logout(self):
     print("Do you want to log out?")
