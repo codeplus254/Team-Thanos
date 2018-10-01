@@ -15,10 +15,12 @@ class User:
 		print("Register to create an account")
 		self.username = input("Enter a username: ")
 		self.password = input("Enter a password: ")
+		self.access_level = input("Enter access-level : ")
 
 		registered_user = {
 			'username': self.username,
-			'password': self.password
+			'password': self.password,
+			'access_level': self.access_level
 		}
 
 		self.user_details.append(registered_user)
