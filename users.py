@@ -19,5 +19,5 @@ Class User:
 
 		from .userdata import user_data
 		user_details = user_data()
-		userdetails.append(registered_user)
+		user_details.append(registered_user)
 		print("Hoorah! You have created an account you can now log in")
