@@ -21,4 +21,4 @@ class User:
 		user_details = Userdata().user_data()
 		user_details.append(registered_user)
 		print(user_details)
-		print("Hoorah! You have created an account you can now log in")
+		return "Hoorah! You have created an account you can now log in"
