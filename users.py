@@ -17,7 +17,8 @@ class User:
 			'password': self.password
 		}
 
-		from .userdata import Userdata
+		from userdata import Userdata
 		user_details = Userdata().user_data()
 		user_details.append(registered_user)
+		print(user_details)
 		print("Hoorah! You have created an account you can now log in")
