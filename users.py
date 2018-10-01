@@ -10,7 +10,7 @@ class User:
 		self.access_level = 0
 		self.user_details = Userdata().user_data()
 
-	
+
 	def create_account(self):
 		print("Register to create an account")
 		self.username = input("Enter a username: ")
