@@ -7,6 +7,7 @@ class User:
     self.password = ""
     self.access_level = 0
     self.user_details = Userdata().user_data()
+    self.logged_in_details = Userdata().user_login_data()
 
 
 
@@ -32,11 +33,29 @@ class User:
     varx = self.user_details
     user = [user for user in varx if user['username'] == self.username]
     if user[0]['password'] == self.password:
-      print("Logged in!")
       login_details = {
+      "username":self.username,
       "logged_in": True,
-      "access_level": 0,
       "Timestamp":"Coming soon"
       }
-      Userdata().user_login_data().append(login_details)
+      self.logged_in_details.append(login_details)
+      print("Logged in successfully")
+    else:
+      print("Wrong password/username comination")
 
+  def user_logout(self):
+    print("Do you want to log out?")
+    # print("Enter y/n")
+    choice = input("Enter y/n: ")
+    if choice == "y":
+      varx = self.logged_in_details
+      user = [user for user in varx if user['username'] == self.username]
+      login_details = {
+      "username":self.username,
+      "logged_in": False,
+      "Timestamp":"Coming soon"
+      }
+      self.logged_in_details.append(login_details)
+      print("Logged out!")
+    else:
+      print("Aborted")
