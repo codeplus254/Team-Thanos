@@ -1,4 +1,4 @@
-Class User:
+class User:
 	"""Creates variables for any user"""
 
 	def __init__(self):
@@ -17,7 +17,7 @@ Class User:
 			'password': self.password
 		}
 
-		from .userdata import user_data
-		user_details = user_data()
+		from .userdata import Userdata
+		user_details = Userdata().user_data()
 		user_details.append(registered_user)
 		print("Hoorah! You have created an account you can now log in")

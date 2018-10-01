@@ -1,4 +1,4 @@
-Class Userdata():
+class Userdata():
 
 	def __init__(self):
 		self.userdetails = []
