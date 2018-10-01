@@ -11,26 +11,21 @@ class User:
 
 
 
-	def create_account(self):
-		print("Register to create an account")
-		self.username = input("Enter a username: ")
-		self.password = input("Enter a password: ")
-		self.access_level = input("Enter access-level : ")
+  def create_account(self):
+      print("Register to create an account")
+      self.username = input("Enter a username: ")
+      self.password = input("Enter a password: ")
+      self.access_level = input("Enter access-level : ")
 
-		registered_user = {
-			'username': self.username,
-			'password': self.password,
-			'access_level': self.access_level
-		}
+      registered_user = {
+        'username': self.username,
+        'password': self.password,
+        'access_level': self.access_level
+      }
 
-    registered_user = {
-    	'username': self.username,
-    	'password': self.password
-    }
-
-    self.user_details.append(registered_user)
-    print(self.user_details)
-    return "Hoorah! You have created an account you can now log in"
+      self.user_details.append(registered_user)
+      print(self.user_details)
+      return "Hoorah! You have created an account you can now log in"
 
   def user_login(self):
     print("Please provide your username and password to log in")
@@ -40,15 +35,13 @@ class User:
     varx = self.user_details
     user = [user for user in varx if user['username'] == self.username]
     if user[0]['password'] == self.password:
+      print("Logged in!")
       login_details = {
-      "username":self.username,
       "logged_in": True,
+      "access_level": 0,
       "Timestamp":"Coming soon"
       }
-      self.logged_in_details.append(login_details)
-      print("Logged in successfully")
-    else:
-      print("Wrong password/username comination")
+      Userdata().user_login_data().append(login_details)
 
   def user_logout(self):
     print("Do you want to log out?")
